@@ -428,8 +428,8 @@ export default async function ArticlePage({ params }: { params: Params }) {
                   <p className="mt-1 text-xs sm:text-sm text-gray-600 leading-relaxed">
                     Viajero frecuente y especialista en comercio electrónico e
                     innovación digital. Creador de Equipaje Ordenado para
-                    ayudarte a elegir las mejores maletas de mano y viajar sin
-                    complicaciones por América, Europa y el mundo.
+                    ayudarte a elegir las mejores maletas de mano y disfrutar de
+                    cada viaje con total comodidad y sin complicaciones.
                   </p>
                 </div>
               </div>

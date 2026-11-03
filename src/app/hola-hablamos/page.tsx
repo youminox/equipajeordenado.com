@@ -13,6 +13,9 @@ export const metadata: Metadata = {
 
 export default function HolaHablamosPage() {
   const page = getPageBySlug("hola-hablamos");
+  const cleanHtml = page
+    ? page.content.replace(/<figure[^>]*>[\s\S]*?<\/figure>/gi, "")
+    : "";
   const breadcrumbItems = [
     { label: "Inicio", href: "/" },
     { label: "¡Hola! ¿Hablamos?" },
@@ -49,7 +52,7 @@ export default function HolaHablamosPage() {
             {page ? (
               <div
                 className="article-content max-w-none"
-                dangerouslySetInnerHTML={{ __html: page.content }}
+                dangerouslySetInnerHTML={{ __html: cleanHtml }}
               />
             ) : (
               <div className="article-content">

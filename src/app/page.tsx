@@ -257,38 +257,36 @@ export default function HomePage() {
                 <p className="text-base sm:text-lg text-sky-100 leading-relaxed">
                   Estás en una de las páginas más completas sobre viajes y
                   equipaje de cabina, creada por <strong>Charlie Lingán</strong>,
-                  amante de los viajes y la innovación digital. He visitado{" "}
-                  <strong>
-                    Punta Cana, Cancún, Madrid, Miami y muchos otros destinos
-                  </strong>
-                  , y he reunido aquí las mejores guías, comparativas de marcas
-                  y normativas de aerolíneas para que disfrutes de un viaje
-                  placentero, ligero y sin contratiempos.
+                  amante de los viajes y la innovación digital. A través de mi
+                  experiencia viajando, he reunido aquí las mejores guías,
+                  comparativas de marcas y normativas de aerolíneas para que
+                  disfrutes de cada viaje de forma placentera, ligera y sin
+                  contratiempos.
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
                   <div className="rounded-xl bg-white/10 p-3.5 text-center">
                     <span className="block text-sm font-bold text-amber-300">
-                      🌴 Punta Cana
+                      🧳 Equipaje Ligero
                     </span>
-                    <span className="text-xs text-sky-100">Caribe</span>
+                    <span className="text-xs text-sky-100">Guías de Cabina</span>
                   </div>
                   <div className="rounded-xl bg-white/10 p-3.5 text-center">
                     <span className="block text-sm font-bold text-amber-300">
-                      🏖️ Cancún
+                      ✈️ Aerolíneas
                     </span>
-                    <span className="text-xs text-sky-100">México</span>
+                    <span className="text-xs text-sky-100">Medidas Exactas</span>
                   </div>
                   <div className="rounded-xl bg-white/10 p-3.5 text-center">
                     <span className="block text-sm font-bold text-amber-300">
-                      🇪🇸 Madrid
+                      ⭐ Mejores Marcas
                     </span>
-                    <span className="text-xs text-sky-100">Europa</span>
+                    <span className="text-xs text-sky-100">Reseñas Reales</span>
                   </div>
                   <div className="rounded-xl bg-white/10 p-3.5 text-center">
                     <span className="block text-sm font-bold text-amber-300">
-                      🇺🇸 Miami
+                      💡 Tips de Viaje
                     </span>
-                    <span className="text-xs text-sky-100">Estados Unidos</span>
+                    <span className="text-xs text-sky-100">Sin Contratiempos</span>
                   </div>
                 </div>
                 <div className="pt-2">
