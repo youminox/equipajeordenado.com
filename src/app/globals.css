@@ -1,0 +1,211 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme inline {
+  --color-primary: #0767db;
+  --color-primary-dark: #03428e;
+  --color-accent: #f59e0b;
+  --color-accent-dark: #d97706;
+  --color-brand-black: #111827;
+  --color-brand-gray: #4b5563;
+  --color-light-bg: #f4f8fd;
+  --color-border-light: #e2e8f0;
+  --font-sans: "Inter", "Helvetica Neue", Helvetica, system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-brand-black);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Article Content Styles — Dinamica.pe editorial style */
+.article-content {
+  color: #374151;
+  line-height: 1.8;
+  font-size: 1.075rem;
+}
+
+.article-content h2 {
+  font-size: 1.55rem;
+  line-height: 1.3;
+  font-weight: 800;
+  color: #03428e;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  scroll-margin-top: 6rem;
+}
+
+.article-content h3 {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 700;
+  color: #111827;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.article-content h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.article-content p {
+  margin-bottom: 1.25rem;
+  color: #4b5563;
+  line-height: 1.8;
+}
+
+.article-content ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.article-content ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.article-content li {
+  margin-bottom: 0.5rem;
+  color: #4b5563;
+  line-height: 1.75;
+}
+
+.article-content strong,
+.article-content b {
+  font-weight: 700;
+  color: #111827;
+}
+
+.article-content blockquote {
+  border-left: 4px solid #0767db;
+  padding: 0.75rem 1.25rem;
+  margin: 1.5rem 0;
+  background-color: #f4f8fd;
+  border-radius: 0 0.75rem 0.75rem 0;
+  font-style: italic;
+  color: #1e3a8a;
+}
+
+.article-content img {
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  margin: 1.75rem auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.article-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.75rem 0;
+  font-size: 0.95rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.article-content table th {
+  background-color: #f4f8fd;
+  color: #03428e;
+  font-weight: 700;
+  text-align: left;
+  padding: 0.85rem 1rem;
+  border: 1px solid #e2e8f0;
+}
+
+.article-content table td {
+  padding: 0.85rem 1rem;
+  border: 1px solid #e2e8f0;
+  color: #4b5563;
+}
+
+.article-content a {
+  color: #0767db;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.article-content a:hover {
+  color: #03428e;
+}
+
+/* Lazy YouTube video facade in article content */
+.article-content #video-container {
+  position: relative;
+  margin: 1.75rem auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  background: #0f172a;
+}
+
+.article-content .image-video-plugin {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.92;
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+.article-content #video-container:hover .image-video-plugin {
+  transform: scale(1.02);
+  opacity: 1;
+}
+
+.article-content .youtube-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 68px;
+  height: 48px;
+  background-color: rgba(220, 38, 38, 0.94);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+.article-content #video-container:hover .youtube-play-button {
+  background-color: #dc2626;
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.article-content .youtube-play-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 10px 0 10px 18px;
+  border-color: transparent transparent transparent #ffffff;
+}
