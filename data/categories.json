@@ -1,13 +1,5 @@
 [
   {
-    "id": 18,
-    "slug": "escapadas-a-la-naturaleza",
-    "name": "Escapadas a la Naturaleza",
-    "parent": "",
-    "description": "Descubre las mejores rutas de senderismo, parques nacionales, playas vírgenes y escapadas al aire libre con consejos de equipaje ligero.",
-    "count": 487
-  },
-  {
     "id": 21,
     "slug": "hoteles-en-europa",
     "name": "Hoteles en Europa",
@@ -16,28 +8,12 @@
     "count": 384
   },
   {
-    "id": 15,
-    "slug": "experiencias-y-tips-de-viajeros",
-    "name": "Experiencias y Tips de Viajeros",
-    "parent": "",
-    "description": "Consejos prácticos de viajeros frecuentes, trucos de aeropuerto, organización de maletas y experiencias reales alrededor del mundo.",
-    "count": 195
-  },
-  {
-    "id": 16,
-    "slug": "destinos",
-    "name": "Destinos de Playa",
-    "parent": "",
-    "description": "Guías completas sobre qué hacer en los mejores destinos de playa del mundo, actividades imperdibles y qué llevar en tu maleta.",
-    "count": 193
-  },
-  {
     "id": 17,
     "slug": "viaje-en-ciudades",
     "name": "Viajes en Ciudades",
     "parent": "",
     "description": "Guías urbanas para explorar las ciudades más fascinantes del mundo viajando cómodo y solo con equipaje de mano.",
-    "count": 187
+    "count": 188
   },
   {
     "id": 23,
@@ -45,7 +21,7 @@
     "name": "Restaurantes de América",
     "parent": "",
     "description": "Rutas gastronómicas y los mejores restaurantes recomendados en Norteamérica, Centroamérica y Sudamérica para tu próximo viaje.",
-    "count": 182
+    "count": 187
   },
   {
     "id": 19,
@@ -53,15 +29,7 @@
     "name": "Viajes por África",
     "parent": "",
     "description": "Guías de viaje por África: safaris, ciudades históricas, cultura, consejos de seguridad y qué empacar para cada destino.",
-    "count": 181
-  },
-  {
-    "id": 20,
-    "slug": "asia",
-    "name": "Viajes por Asia",
-    "parent": "",
-    "description": "Todo para viajar a Asia: templos, metrópolis modernas, playas paradisíacas y recomendaciones de equipaje para vuelos largos.",
-    "count": 180
+    "count": 186
   },
   {
     "id": 22,
@@ -69,7 +37,15 @@
     "name": "Hoteles en América",
     "parent": "",
     "description": "Guía de los mejores hoteles y resorts en Estados Unidos, México, el Caribe, Centroamérica y Sudamérica.",
-    "count": 180
+    "count": 186
+  },
+  {
+    "id": 20,
+    "slug": "asia",
+    "name": "Viajes por Asia",
+    "parent": "",
+    "description": "Todo para viajar a Asia: templos, metrópolis modernas, playas paradisíacas y recomendaciones de equipaje para vuelos largos.",
+    "count": 131
   },
   {
     "id": 14,
@@ -88,12 +64,20 @@
     "count": 74
   },
   {
+    "id": 18,
+    "slug": "escapadas-a-la-naturaleza",
+    "name": "Escapadas a la Naturaleza",
+    "parent": "",
+    "description": "Descubre las mejores rutas de senderismo, parques nacionales, playas vírgenes y escapadas al aire libre con consejos de equipaje ligero.",
+    "count": 51
+  },
+  {
     "id": 4,
     "slug": "curiosidades",
     "name": "Curiosidades de Viaje",
     "parent": "",
     "description": "Datos sorprendentes, preguntas frecuentes y todo lo que debes saber sobre el mundo de la aviación y el equipaje de cabina.",
-    "count": 52
+    "count": 50
   },
   {
     "id": 11,
@@ -101,7 +85,7 @@
     "name": "Equipaje Económico",
     "parent": "",
     "description": "Las mejores opciones de maletas de mano económicas con excelente relación calidad-precio y trucos para viajar gastando menos.",
-    "count": 51
+    "count": 50
   },
   {
     "id": 9,
@@ -109,7 +93,7 @@
     "name": "Marcas de Maletas",
     "parent": "",
     "description": "Análisis y opiniones de las mejores marcas de maletas de cabina: Samsonite, American Tourister, Aerolite, Travelpro, Cabin Max y más.",
-    "count": 51
+    "count": 50
   },
   {
     "id": 5,
@@ -117,7 +101,7 @@
     "name": "Regulaciones y Normativas",
     "parent": "",
     "description": "Normativas internacionales de seguridad aeroportuaria (TSA, UE, IATA) sobre dimensiones, líquidos, baterías y control de seguridad.",
-    "count": 51
+    "count": 50
   },
   {
     "id": 8,
@@ -125,7 +109,7 @@
     "name": "Tipos de Equipaje",
     "parent": "",
     "description": "Comparativas de todos los tipos de equipaje de mano: maletas rígidas, blandas, mochilas de cabina, bolsas con ruedas y más.",
-    "count": 51
+    "count": 50
   },
   {
     "id": 12,
@@ -133,7 +117,15 @@
     "name": "Seguridad en Viajes",
     "parent": "",
     "description": "Cómo proteger tus pertenencias durante el viaje: candados TSA, maletas antirrobo, rastreadores GPS y seguridad en aeropuertos.",
-    "count": 45
+    "count": 44
+  },
+  {
+    "id": 15,
+    "slug": "experiencias-y-tips-de-viajeros",
+    "name": "Experiencias y Tips de Viajeros",
+    "parent": "",
+    "description": "Consejos prácticos de viajeros frecuentes, trucos de aeropuerto, organización de maletas y experiencias reales alrededor del mundo.",
+    "count": 40
   },
   {
     "id": 7,
@@ -141,7 +133,15 @@
     "name": "Guías de Equipaje",
     "parent": "",
     "description": "Guías paso a paso para elegir, organizar y aprovechar cada centímetro de tu maleta de cabina en cualquier tipo de viaje.",
-    "count": 38
+    "count": 37
+  },
+  {
+    "id": 16,
+    "slug": "destinos",
+    "name": "Destinos de Playa",
+    "parent": "",
+    "description": "Guías completas sobre qué hacer en los mejores destinos de playa del mundo, actividades imperdibles y qué llevar en tu maleta.",
+    "count": 20
   },
   {
     "id": 6,

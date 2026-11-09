@@ -22,6 +22,38 @@ import {
 
 type Params = Promise<{ category: string; slug: string }>;
 
+const DATED_SLUG_REDIRECTS: Record<string, string> = {
+  "guia-actualizada-del-equipaje-de-mano-en-jetblue-2025":
+    "guia-actualizada-del-equipaje-de-mano-en-jetblue",
+  "guia-completa-del-equipaje-de-mano-en-british-airways-2024":
+    "guia-completa-del-equipaje-de-mano-en-british-airways",
+  "guia-practica-sobre-el-equipaje-de-mano-de-spirit-airlines-en-2025":
+    "guia-practica-sobre-el-equipaje-de-mano-de-spirit-airlines",
+  "medidas-y-peso-del-equipaje-de-mano-en-delta-airlines-2025":
+    "medidas-y-peso-del-equipaje-de-mano-en-delta-airlines",
+  "politica-de-equipaje-de-mano-de-easyjet-en-2025-que-puedes-llevar-gratis":
+    "politica-de-equipaje-de-mano-de-easyjet-que-puedes-llevar-gratis",
+  "todo-sobre-el-equipaje-de-mano-en-air-france-para-2025":
+    "todo-sobre-el-equipaje-de-mano-en-air-france",
+};
+
+function resolveCanonicalBasePost(slug: string) {
+  if (DATED_SLUG_REDIRECTS[slug]) {
+    const datedTarget = getPostBySlug(DATED_SLUG_REDIRECTS[slug]);
+    if (datedTarget) return datedTarget;
+  }
+
+  const numberedMatch = slug.match(/^(.+)-(\d{1,2})$/);
+  if (numberedMatch) {
+    const candidateBase = numberedMatch[1];
+    const resolvedBase = DATED_SLUG_REDIRECTS[candidateBase] || candidateBase;
+    const basePost = getPostBySlug(resolvedBase);
+    if (basePost) return basePost;
+  }
+
+  return undefined;
+}
+
 export async function generateStaticParams() {
   const posts = getAllPosts();
   return posts.map((post) => ({
@@ -36,9 +68,12 @@ export async function generateMetadata({
   params: Params;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = getPostBySlug(slug) || resolveCanonicalBasePost(slug);
   if (!post) {
-    return { title: `Artículo no encontrado | ${SITE_NAME}` };
+    return {
+      title: `Artículo no encontrado | ${SITE_NAME}`,
+      robots: { index: false, follow: true },
+    };
   }
 
   const description = post.excerpt || generateExcerpt(post.content, 158);
@@ -150,9 +185,9 @@ export default async function ArticlePage({ params }: { params: Params }) {
   const post = getPostBySlug(slug);
 
   if (!post) {
-    const validCat = getCategoryBySlug(categorySlug);
-    if (validCat) {
-      permanentRedirect(`/${categorySlug}/`);
+    const canonicalBase = resolveCanonicalBasePost(slug);
+    if (canonicalBase) {
+      permanentRedirect(`/${canonicalBase.category}/${canonicalBase.slug}/`);
     }
     notFound();
   }

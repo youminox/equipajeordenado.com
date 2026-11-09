@@ -83,6 +83,26 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/comments/feed/",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/comments/feed",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/:category/:slug/feed/",
+        destination: "/:category/:slug/",
+        permanent: true,
+      },
+      {
+        source: "/:category/:slug/feed",
+        destination: "/:category/:slug/",
+        permanent: true,
+      },
+      {
         source: "/feed/",
         destination: "/",
         permanent: true,
@@ -90,6 +110,66 @@ const nextConfig: NextConfig = {
       {
         source: "/feed",
         destination: "/",
+        permanent: true,
+      },
+      // Legacy WordPress media uploads -> local optimized /images/
+      {
+        source: "/wp-content/uploads/:year(\\d{4})/:month(\\d{2})/:file*",
+        destination: "/images/:file*",
+        permanent: true,
+      },
+      // Evergreen slug redirects (past year removal)
+      {
+        source:
+          "/:category/guia-actualizada-del-equipaje-de-mano-en-jetblue-2025/",
+        destination:
+          "/reglas-de-equipaje/guia-actualizada-del-equipaje-de-mano-en-jetblue/",
+        permanent: true,
+      },
+      {
+        source:
+          "/:category/guia-completa-del-equipaje-de-mano-en-british-airways-2024/",
+        destination:
+          "/reglas-de-equipaje/guia-completa-del-equipaje-de-mano-en-british-airways/",
+        permanent: true,
+      },
+      {
+        source:
+          "/:category/guia-practica-sobre-el-equipaje-de-mano-de-spirit-airlines-en-2025/",
+        destination:
+          "/reglas-de-equipaje/guia-practica-sobre-el-equipaje-de-mano-de-spirit-airlines/",
+        permanent: true,
+      },
+      {
+        source:
+          "/:category/medidas-y-peso-del-equipaje-de-mano-en-delta-airlines-2025/",
+        destination:
+          "/reglas-de-equipaje/medidas-y-peso-del-equipaje-de-mano-en-delta-airlines/",
+        permanent: true,
+      },
+      {
+        source:
+          "/:category/politica-de-equipaje-de-mano-de-easyjet-en-2025-que-puedes-llevar-gratis/",
+        destination:
+          "/reglas-de-equipaje/politica-de-equipaje-de-mano-de-easyjet-que-puedes-llevar-gratis/",
+        permanent: true,
+      },
+      {
+        source:
+          "/:category/todo-sobre-el-equipaje-de-mano-en-air-france-para-2025/",
+        destination:
+          "/reglas-de-equipaje/todo-sobre-el-equipaje-de-mano-en-air-france/",
+        permanent: true,
+      },
+      // Numbered WordPress duplicate clones (-2 .. -99) -> canonical base article
+      {
+        source: "/:category/:slug-:num(\\d{1,2})/",
+        destination: "/:category/:slug/",
+        permanent: true,
+      },
+      {
+        source: "/:category/:slug-:num(\\d{1,2})",
+        destination: "/:category/:slug/",
         permanent: true,
       },
       // Common legal & contact aliases
