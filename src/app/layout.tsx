@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import EquipajeChatWidget from "@/components/EquipajeChatWidget";
 import {
   SITE_NAME,
   SITE_DESCRIPTION,
@@ -117,6 +118,7 @@ export default function RootLayout({
       </head>
       <body className="bg-white text-gray-900 antialiased">
         {children}
+        <EquipajeChatWidget />
         <Script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
