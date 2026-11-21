@@ -209,3 +209,24 @@ body {
   border-width: 10px 0 10px 18px;
   border-color: transparent transparent transparent #ffffff;
 }
+
+/* Editorial "respuesta rápida" box (featured-snippet friendly) */
+.article-content .quick-answer {
+  margin: 0 0 2rem;
+  padding: 1.1rem 1.4rem;
+  border-left: 4px solid var(--color-primary);
+  border-radius: 1rem;
+  background: var(--color-light-bg);
+}
+
+.article-content .quick-answer p {
+  margin: 0;
+}
+
+
+@media (max-width: 640px) {
+  .article-content table {
+    display: block;
+    overflow-x: auto;
+  }
+}

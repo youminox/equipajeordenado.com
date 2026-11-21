@@ -1,0 +1,16 @@
+similitud,categoria,slug_a,slug_b
+0.75,seguridad,que-medidas-de-seguridad-tomar-con-el-equipaje-de-mano-en-viajes-en-coche,que-medidas-de-seguridad-tomar-con-el-equipaje-de-mano-en-el-avion
+0.75,seguridad,que-medidas-de-seguridad-tomar-con-el-equipaje-de-mano-en-viajes-de-negocios,que-medidas-de-seguridad-tomar-con-el-equipaje-de-mano-en-el-avion
+0.75,seguridad,que-medidas-de-seguridad-tomar-con-el-equipaje-de-mano-en-excursiones,que-medidas-de-seguridad-tomar-con-el-equipaje-de-mano-en-el-avion
+0.75,seguridad,que-medidas-de-seguridad-tomar-con-el-equipaje-de-mano-en-cruceros,que-medidas-de-seguridad-tomar-con-el-equipaje-de-mano-en-el-avion
+0.71,restaurantes-de-america,donde-comer-en-quito-cerca-de-lugares-turisticos,donde-comer-en-montevideo-cerca-de-lugares-turisticos
+0.6,seguridad,que-medidas-de-seguridad-tomar-con-el-equipaje-de-mano-en-viajes-en-coche,que-medidas-de-seguridad-tomar-con-el-equipaje-de-mano-en-viajes-de-negocios
+0.6,seguridad,que-medidas-de-seguridad-tomar-con-el-equipaje-de-mano-en-viajes-en-coche,que-medidas-de-seguridad-tomar-con-el-equipaje-de-mano-en-cruceros
+0.6,seguridad,que-medidas-de-seguridad-tomar-con-el-equipaje-de-mano-en-viajes-de-negocios,que-medidas-de-seguridad-tomar-con-el-equipaje-de-mano-en-cruceros
+0.6,seguridad,que-medidas-de-seguridad-tomar-con-el-equipaje-de-mano-en-parques-tematicos,que-medidas-de-seguridad-tomar-con-el-equipaje-de-mano-en-el-avion
+0.6,seguridad,que-medidas-de-seguridad-tomar-con-el-equipaje-de-mano-en-excursiones,que-medidas-de-seguridad-tomar-con-el-equipaje-de-mano-en-viajes-en-coche
+0.6,seguridad,que-medidas-de-seguridad-tomar-con-el-equipaje-de-mano-en-excursiones,que-medidas-de-seguridad-tomar-con-el-equipaje-de-mano-en-viajes-de-negocios
+0.6,seguridad,que-medidas-de-seguridad-tomar-con-el-equipaje-de-mano-en-excursiones,que-medidas-de-seguridad-tomar-con-el-equipaje-de-mano-en-cruceros
+0.6,restaurantes-de-america,mejores-restaurantes-de-comida-local-en-la-paz,mejores-restaurantes-de-comida-local-en-montevideo
+0.6,regulaciones,que-reglas-existen-para-el-equipaje-de-mano-en-vuelos-de-corta-distancia,que-reglas-existen-para-el-equipaje-de-mano-en-vuelos-de-larga-distancia
+0.6,reglas-de-equipaje,comparativa-equipaje-de-mano-permitido-por-aerolineas-low-cost,equipaje-de-mano-en-aerolineas-low-cost-de-europa-guia-comparativa

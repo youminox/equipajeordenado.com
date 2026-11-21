@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Aviso Legal",
   description: `Aviso Legal y condiciones de uso del sitio web ${SITE_NAME}.`,
   alternates: { canonical: `${SITE_URL}/aviso-legal/` },
+  robots: { index: false, follow: true },
 };
 
 export default function AvisoLegalPage() {

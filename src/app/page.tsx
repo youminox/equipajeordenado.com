@@ -9,7 +9,9 @@ import AdBanner from "@/components/AdBanner";
 import {
   getFeaturedPosts,
   getRecentPosts,
-  getAllCategories,
+  getIndexableCategories,
+  getIndexablePosts,
+  toPostCard,
   getPostUrl,
   getImageUrl,
   SITE_NAME,
@@ -18,7 +20,9 @@ import {
 } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: `${SITE_NAME} — Guías de Equipaje de Mano, Medidas por Aerolínea y Viajes`,
+  title: {
+    absolute: `Equipaje de mano: medidas, peso y normas por aerolínea | ${SITE_NAME}`,
+  },
   description: SITE_DESCRIPTION,
   alternates: { canonical: `${SITE_URL}/` },
 };
@@ -38,22 +42,13 @@ const LUGGAGE_CATS = [
   "resenas",
 ];
 
-const TRAVEL_CATS = [
-  "escapadas-a-la-naturaleza",
-  "hoteles-en-europa",
-  "experiencias-y-tips-de-viajeros",
-  "destinos",
-  "viaje-en-ciudades",
-  "restaurantes-de-america",
-  "afrika",
-  "asia",
-  "hoteles-en-america",
-];
+const TRAVEL_CATS = ["experiencias-y-tips-de-viajeros"];
 
 export default function HomePage() {
   const featuredPosts = getFeaturedPosts(6);
-  const explorerPosts = getRecentPosts(48);
-  const categories = getAllCategories();
+  const explorerPosts = getRecentPosts(48).map(toPostCard);
+  const categories = getIndexableCategories().filter((c) => c.count > 0);
+  const totalGuides = getIndexablePosts().length;
   const catMap = new Map(categories.map((c) => [c.slug, c]));
 
   const luggageCategories = LUGGAGE_CATS.map((s) => catMap.get(s)).filter(
@@ -90,7 +85,7 @@ export default function HomePage() {
             {/* Quick Category Pills */}
             <div className="mt-8 flex flex-wrap justify-center gap-2.5">
               <Link
-                href="/reglas-de-equipaje/"
+                href="/medidas-equipaje-de-mano/"
                 className="rounded-full bg-white/15 border border-white/25 px-4 py-2 text-xs sm:text-sm font-semibold text-white transition hover:bg-white hover:text-primary-dark"
               >
                 📏 Medidas por Aerolínea
@@ -114,10 +109,16 @@ export default function HomePage() {
                 💡 Trucos para Empacar
               </Link>
               <Link
-                href="/hoteles-en-europa/"
+                href="/regulaciones/que-liquidos-estan-permitidos-en-el-equipaje-de-mano/"
                 className="rounded-full bg-white/15 border border-white/25 px-4 py-2 text-xs sm:text-sm font-semibold text-white transition hover:bg-white hover:text-primary-dark"
               >
-                🌍 Destinos y Hoteles
+                💧 Líquidos en Cabina
+              </Link>
+              <Link
+                href="/equipaje-de-mano/"
+                className="rounded-full bg-amber-400 px-4 py-2 text-xs sm:text-sm font-bold text-gray-950 transition hover:bg-amber-300"
+              >
+                📘 Guía Completa
               </Link>
             </div>
 
@@ -125,15 +126,15 @@ export default function HomePage() {
             <div className="mt-12 grid grid-cols-3 gap-4 max-w-lg mx-auto border-t border-white/15 pt-8">
               <div>
                 <span className="block text-2xl sm:text-3xl font-extrabold text-amber-300">
-                  2,720+
+                  {totalGuides}
                 </span>
                 <span className="text-xs text-sky-100 uppercase tracking-wider font-semibold">
-                  Guías Verificadas
+                  Guías de Equipaje
                 </span>
               </div>
               <div>
                 <span className="block text-2xl sm:text-3xl font-extrabold text-amber-300">
-                  21
+                  {categories.length}
                 </span>
                 <span className="text-xs text-sky-100 uppercase tracking-wider font-semibold">
                   Categorías
@@ -199,9 +200,7 @@ export default function HomePage() {
                     <div className="mb-2 flex items-center gap-2 text-xs text-gray-400 font-medium">
                       <span>⏱️ {post.readTime} de lectura</span>
                       <span>·</span>
-                      <span className="text-emerald-600 font-semibold">
-                        ✓ Guía Verificada
-                      </span>
+                      <span className="text-gray-500">{post.categoryName}</span>
                     </div>
                     <h3 className="text-lg font-bold text-gray-900 transition-colors group-hover:text-primary line-clamp-2">
                       {post.title}
@@ -324,7 +323,7 @@ export default function HomePage() {
               </span>
               <h2 className="mt-3 text-3xl font-extrabold text-gray-900 sm:text-4xl">
                 Todas las Categorías de{" "}
-                <span className="text-primary">Equipaje y Destinos</span>
+                <span className="text-primary">Equipaje de Mano</span>
               </h2>
             </div>
 
@@ -362,7 +361,7 @@ export default function HomePage() {
             {/* Group 2: Destinos, Hoteles y Restaurantes */}
             <div>
               <h3 className="text-lg font-extrabold text-gray-900 mb-5 flex items-center gap-2">
-                <span>🌎</span> Destinos, Hoteles, Naturaleza y Gastronomía
+                <span>🧭</span> Experiencias de Viajeros
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {travelCategories.map(

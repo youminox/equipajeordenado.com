@@ -16,6 +16,11 @@ import {
   getPostUrl,
   getImageUrl,
   generateExcerpt,
+  getMergeTarget,
+  isPostIndexable,
+  toIsoDate,
+  AUTHOR_NAME,
+  AUTHOR_URL,
   SITE_NAME,
   SITE_URL,
 } from "@/lib/data";
@@ -76,24 +81,29 @@ export async function generateMetadata({
     };
   }
 
-  const description = post.excerpt || generateExcerpt(post.content, 158);
+  const description =
+    post.description || post.excerpt || generateExcerpt(post.content, 158);
   const absoluteImageUrl = `${SITE_URL}${getImageUrl(post.featuredImageUrl)}`;
   const canonicalUrl = `${SITE_URL}/${post.category}/${post.slug}/`;
+  const indexable = isPostIndexable(post);
 
   return {
-    title: post.title,
+    title: post.seoTitle ? { absolute: post.seoTitle } : post.title,
     description,
     alternates: {
       canonical: canonicalUrl,
     },
+    ...(indexable ? {} : { robots: { index: false, follow: true } }),
     openGraph: {
-      title: `${post.title} | ${SITE_NAME}`,
+      title: post.seoTitle || `${post.title} | ${SITE_NAME}`,
       description,
       url: canonicalUrl,
       type: "article",
       locale: "es_ES",
       siteName: SITE_NAME,
-      authors: ["Charlie Lingán"],
+      authors: [AUTHOR_NAME],
+      publishedTime: toIsoDate(post.date),
+      modifiedTime: toIsoDate(post.modified),
       images: [
         {
           url: absoluteImageUrl,
@@ -185,6 +195,10 @@ export default async function ArticlePage({ params }: { params: Params }) {
   const post = getPostBySlug(slug);
 
   if (!post) {
+    const mergeTarget = getMergeTarget(slug);
+    if (mergeTarget) {
+      permanentRedirect(mergeTarget);
+    }
     const canonicalBase = resolveCanonicalBasePost(slug);
     if (canonicalBase) {
       permanentRedirect(`/${canonicalBase.category}/${canonicalBase.slug}/`);
@@ -214,19 +228,23 @@ export default async function ArticlePage({ params }: { params: Params }) {
 
   const absoluteImageUrl = `${SITE_URL}${getImageUrl(post.featuredImageUrl)}`;
   const canonicalUrl = `${SITE_URL}/${post.category}/${post.slug}/`;
-  const freshIsoDate = new Date().toISOString().split("T")[0];
+  const publishedIso = toIsoDate(post.date);
+  const modifiedIso = toIsoDate(post.modified) || publishedIso;
 
   const blogPostingSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
-    description: post.excerpt || generateExcerpt(post.content, 160),
+    description:
+      post.description || post.excerpt || generateExcerpt(post.content, 160),
     image: absoluteImageUrl,
-    dateModified: freshIsoDate,
+    datePublished: publishedIso,
+    dateModified: modifiedIso,
+    inLanguage: "es",
     author: {
       "@type": "Person",
-      name: "Charlie Lingán",
-      url: `${SITE_URL}/hola-hablamos/`,
+      name: AUTHOR_NAME,
+      url: AUTHOR_URL,
     },
     publisher: {
       "@type": "Organization",
@@ -315,9 +333,12 @@ export default async function ArticlePage({ params }: { params: Params }) {
                   ⏱️ {post.readTime} de lectura
                 </span>
                 <span className="text-sm text-gray-300">·</span>
-                <span className="inline-flex items-center gap-1 text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full">
-                  ✓ Guía Verificada y Actualizada
-                </span>
+                {/* Evergreen: no visible year. Real dates live in schema + sitemap. */}
+                {post.editorial && (
+                  <span className="inline-flex items-center gap-1 text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full">
+                    ✓ Revisado con fuentes oficiales
+                  </span>
+                )}
               </div>
 
               {/* H1 Title */}
@@ -332,6 +353,8 @@ export default async function ArticlePage({ params }: { params: Params }) {
                     src={getImageUrl(post.featuredImageUrl)}
                     alt={post.title}
                     className="w-full max-h-[430px] object-cover"
+                    fetchPriority="high"
+                    decoding="async"
                   />
                 </div>
               )}
@@ -426,7 +449,7 @@ export default async function ArticlePage({ params }: { params: Params }) {
                 </p>
                 <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4">
                   <Link
-                    href="/reglas-de-equipaje/"
+                    href="/medidas-equipaje-de-mano/"
                     className="inline-block rounded-xl bg-amber-400 px-6 py-3.5 text-sm font-extrabold text-gray-950 transition hover:bg-amber-300"
                   >
                     ✈️ Ver Medidas por Aerolínea
@@ -492,7 +515,7 @@ export default async function ArticlePage({ params }: { params: Params }) {
                         </div>
                         <div className="p-4">
                           <span className="text-[11px] font-semibold text-gray-400">
-                            ⏱️ {rp.readTime} de lectura · ✓ Verificada
+                            ⏱️ {rp.readTime} de lectura
                           </span>
                           <h3 className="mt-1 text-sm font-bold text-gray-900 group-hover:text-primary transition-colors line-clamp-2">
                             {rp.title}

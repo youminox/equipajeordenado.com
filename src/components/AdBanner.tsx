@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { ADSENSE_ID } from "@/lib/data";
+import { ADSENSE_ID } from "@/lib/utils";
 
 declare global {
   interface Window {

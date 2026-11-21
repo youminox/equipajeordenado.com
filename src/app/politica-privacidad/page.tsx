@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Política de Privacidad",
   description: `Política de Privacidad y protección de datos personales de ${SITE_NAME}.`,
   alternates: { canonical: `${SITE_URL}/politica-privacidad/` },
+  robots: { index: false, follow: true },
 };
 
 export default function PoliticaPrivacidadPage() {

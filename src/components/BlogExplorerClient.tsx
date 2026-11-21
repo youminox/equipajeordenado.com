@@ -2,11 +2,20 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import type { Post, Category } from "@/lib/types";
-import { getPostUrl, getImageUrl } from "@/lib/data";
+import type { Category } from "@/lib/types";
+import { getPostUrl, getImageUrl } from "@/lib/utils";
 
 interface BlogExplorerProps {
-  initialPosts: Post[];
+  initialPosts: {
+    id: number;
+    title: string;
+    slug: string;
+    category: string;
+    categoryName: string;
+    readTime: string;
+    excerpt: string;
+    featuredImageUrl: string;
+  }[];
   categories: Category[];
 }
 
@@ -125,10 +134,6 @@ export default function BlogExplorerClient({
                 <div className="flex flex-1 flex-col p-6">
                   <div className="mb-2 flex items-center gap-2 text-xs text-gray-400 font-medium">
                     <span>⏱️ {post.readTime} de lectura</span>
-                    <span>·</span>
-                    <span className="text-emerald-600 font-semibold">
-                      ✓ Guía Verificada
-                    </span>
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 transition-colors group-hover:text-primary line-clamp-2">
                     {post.title}

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Política de Cookies",
   description: `Información sobre el uso de cookies en ${SITE_NAME}.`,
   alternates: { canonical: `${SITE_URL}/politica-de-cookies/` },
+  robots: { index: false, follow: true },
 };
 
 export default function PoliticaCookiesPage() {

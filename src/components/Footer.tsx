@@ -29,8 +29,8 @@ export default function Footer() {
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-gray-400">
               Tu guía especializada en equipaje de mano, normativas de cabina
-              por aerolínea, comparativas de maletas y recomendaciones de
-              destinos alrededor del mundo. Creado por Charlie Lingán.
+              por aerolínea, comparativas de maletas y consejos para viajar
+              solo con cabina. Creado por Charlie Lingán.
             </p>
           </div>
 
@@ -94,47 +94,47 @@ export default function Footer() {
           {/* Destinos y Viajes */}
           <div>
             <h3 className="text-sm font-bold uppercase tracking-wider text-white">
-              Destinos y Guías
+              Guías Esenciales
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
                 <Link
-                  href="/escapadas-a-la-naturaleza/"
+                  href="/equipaje-de-mano/"
                   className="hover:text-sky-400 transition-colors"
                 >
-                  Escapadas a la Naturaleza
+                  Guía completa de equipaje de mano
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/hoteles-en-europa/"
+                  href="/medidas-equipaje-de-mano/"
                   className="hover:text-sky-400 transition-colors"
                 >
-                  Hoteles en Europa
+                  Medidas por aerolínea
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/hoteles-en-america/"
+                  href="/seguridad/seguro-para-maletas-de-viaje/"
                   className="hover:text-sky-400 transition-colors"
                 >
-                  Hoteles en América
+                  Seguro para maletas de viaje
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/destinos/"
+                  href="/consejos/"
                   className="hover:text-sky-400 transition-colors"
                 >
-                  Destinos de Playa
+                  Consejos de empaque
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/viaje-en-ciudades/"
+                  href="/guias/"
                   className="hover:text-sky-400 transition-colors"
                 >
-                  Viajes en Ciudades
+                  Guías de equipaje
                 </Link>
               </li>
               <li>

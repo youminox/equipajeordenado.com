@@ -8,7 +8,7 @@ import {
   SITE_URL,
   ADSENSE_ID,
   GA_ID,
-} from "@/lib/data";
+} from "@/lib/utils";
 
 const inter = Inter({
   subsets: ["latin"],

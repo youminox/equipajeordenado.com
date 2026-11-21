@@ -8,44 +8,43 @@ const NAV_ITEMS = [
     label: "Equipaje de Mano",
     href: "#",
     children: [
-      { label: "Marcas de Maletas", href: "/marcas/" },
+      { label: "Guía completa de equipaje de mano", href: "/equipaje-de-mano/" },
+      { label: "Qué se considera equipaje de mano", href: "/curiosidades/que-se-considera-como-equipaje-de-mano/" },
       { label: "Tipos de Equipaje", href: "/tipos/" },
+      { label: "Marcas de Maletas", href: "/marcas/" },
       { label: "Equipaje Económico", href: "/barato/" },
       { label: "Reseñas de Maletas", href: "/resenas/" },
-      { label: "Guías de Equipaje", href: "/guias/" },
     ],
   },
   {
     label: "Aerolíneas y Normas",
     href: "#",
     children: [
-      { label: "Medidas por Aerolínea", href: "/reglas-de-equipaje/" },
+      { label: "Medidas por Aerolínea (tabla)", href: "/medidas-equipaje-de-mano/" },
+      { label: "Peso del equipaje de mano", href: "/regulaciones/cuales-son-las-restricciones-de-peso-para-el-equipaje-de-mano/" },
+      { label: "Líquidos en cabina", href: "/regulaciones/que-liquidos-estan-permitidos-en-el-equipaje-de-mano/" },
+      { label: "Reglas por Aerolínea", href: "/reglas-de-equipaje/" },
       { label: "Qué Llevar en Cabina", href: "/que-se-puede-llevar-en-el-equipaje-de-mano/" },
       { label: "Regulaciones de Vuelo", href: "/regulaciones/" },
       { label: "Aerolíneas", href: "/aerolineas/" },
-      { label: "Seguridad en Viajes", href: "/seguridad/" },
     ],
   },
   {
-    label: "Destinos y Hoteles",
+    label: "Seguridad",
     href: "#",
     children: [
-      { label: "Escapadas a la Naturaleza", href: "/escapadas-a-la-naturaleza/" },
-      { label: "Destinos de Playa", href: "/destinos/" },
-      { label: "Viajes en Ciudades", href: "/viaje-en-ciudades/" },
-      { label: "Hoteles en Europa", href: "/hoteles-en-europa/" },
-      { label: "Hoteles en América", href: "/hoteles-en-america/" },
-      { label: "Restaurantes de América", href: "/restaurantes-de-america/" },
-      { label: "Viajes por Asia", href: "/asia/" },
-      { label: "Viajes por África", href: "/afrika/" },
+      { label: "Seguro para maletas", href: "/seguridad/seguro-para-maletas-de-viaje/" },
+      { label: "Proteger tu maleta de robos", href: "/seguridad/como-asegurar-tu-equipaje-de-mano-contra-robos/" },
+      { label: "Seguridad en Viajes", href: "/seguridad/" },
     ],
   },
   {
     label: "Consejos y Tips",
     href: "#",
     children: [
-      { label: "Experiencias de Viajeros", href: "/experiencias-y-tips-de-viajeros/" },
       { label: "Consejos de Empaque", href: "/consejos/" },
+      { label: "Guías de Equipaje", href: "/guias/" },
+      { label: "Experiencias de Viajeros", href: "/experiencias-y-tips-de-viajeros/" },
       { label: "Curiosidades de Viaje", href: "/curiosidades/" },
     ],
   },
@@ -151,7 +150,7 @@ export default function Header() {
           {/* Desktop Action Button */}
           <div className="hidden lg:flex items-center gap-3">
             <Link
-              href="/reglas-de-equipaje/"
+              href="/medidas-equipaje-de-mano/"
               className="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-xs font-bold text-white shadow-sm shadow-primary/25 transition hover:bg-primary-dark"
             >
               <span>✈️</span>
@@ -261,7 +260,7 @@ export default function Header() {
             ))}
             <div className="pt-3">
               <Link
-                href="/reglas-de-equipaje/"
+                href="/medidas-equipaje-de-mano/"
                 onClick={() => setIsMobileOpen(false)}
                 className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 text-sm font-bold text-white shadow-sm"
               >

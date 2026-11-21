@@ -7,6 +7,9 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import AdBanner from "@/components/AdBanner";
 import {
   getAllCategories,
+  getIndexableCategories,
+  isCategoryIndexable,
+  isPostIndexable,
   getCategoryBySlug,
   getPostsByCategorySlug,
   getFeaturedPosts,
@@ -35,11 +38,13 @@ export async function generateMetadata({
   const title = `${category.name}: Guías, Consejos y Recomendaciones`;
   const description =
     category.description ||
-    `Explora ${category.count} guías completas sobre ${category.name} en ${SITE_NAME}. Información verificada y consejos prácticos para viajeros.`;
+    `Explora las guías sobre ${category.name} en ${SITE_NAME}: información práctica y consejos para viajar solo con equipaje de mano.`;
+  const indexable = isCategoryIndexable(category.slug);
 
   return {
     title,
     description,
+    ...(indexable ? {} : { robots: { index: false, follow: true } }),
     openGraph: {
       title: `${title} | ${SITE_NAME}`,
       description,
@@ -61,7 +66,8 @@ export default async function CategoryPage({ params }: { params: Params }) {
   }
 
   const posts = getPostsByCategorySlug(categorySlug);
-  const allCategories = getAllCategories();
+  const allCategories = getIndexableCategories();
+  const liveCount = posts.filter(isPostIndexable).length || posts.length;
   const featuredGuides = getFeaturedPosts(5);
 
   const breadcrumbItems = [
@@ -79,7 +85,7 @@ export default async function CategoryPage({ params }: { params: Params }) {
           {/* Category Header Banner — Dinamica.pe style */}
           <div className="mt-4 mb-12 rounded-3xl bg-gradient-to-br from-[#022c61] via-primary-dark to-primary p-8 sm:p-12 text-white shadow-lg">
             <span className="inline-block rounded-full bg-white/15 px-4 py-1 text-xs font-bold uppercase tracking-widest text-sky-200">
-              {category.count} Guías Especializadas
+              {liveCount} Guías Especializadas
             </span>
             <h1 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
               {category.name}
@@ -116,9 +122,7 @@ export default async function CategoryPage({ params }: { params: Params }) {
                       <div className="mb-2 flex items-center gap-2 text-xs text-gray-400 font-medium">
                         <span>⏱️ {post.readTime} de lectura</span>
                         <span>·</span>
-                        <span className="text-emerald-600 font-semibold">
-                          ✓ Guía Verificada
-                        </span>
+                        <span className="text-gray-500">{post.categoryName}</span>
                       </div>
                       <h2 className="text-lg font-bold text-gray-900 transition-colors group-hover:text-primary line-clamp-2">
                         {post.title}

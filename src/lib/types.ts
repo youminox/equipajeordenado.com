@@ -14,6 +14,12 @@ export interface Post {
   featuredImageUrl: string;
   type: "post" | "page";
   status: string;
+  /** Optional <title> override (editorial rewrites). */
+  seoTitle?: string;
+  /** Optional meta description override (editorial rewrites). */
+  description?: string;
+  /** True when the post comes from data/editorial/ (rewritten or new). */
+  editorial?: boolean;
 }
 
 export interface Category {

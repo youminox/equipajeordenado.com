@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SITE_URL } from "@/lib/data";
+import { SITE_URL } from "@/lib/utils";
 
 export interface BreadcrumbItem {
   label: string;

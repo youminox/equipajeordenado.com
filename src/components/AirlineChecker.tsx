@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { AIRLINE_RULES, type AirlineRule } from "@/lib/data";
+import { AIRLINE_RULES, type AirlineRule } from "@/lib/airlines";
 
 export default function AirlineChecker() {
   const [selected, setSelected] = useState<AirlineRule>(AIRLINE_RULES[0]);
