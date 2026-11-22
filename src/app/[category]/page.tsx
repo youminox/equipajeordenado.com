@@ -5,6 +5,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import AdBanner from "@/components/AdBanner";
+import AmazonAffiliateBox from "@/components/AmazonAffiliateBox";
+import { getContextualAmazonProducts } from "@/lib/amazon";
 import {
   getAllCategories,
   getIndexableCategories,
@@ -69,6 +71,11 @@ export default async function CategoryPage({ params }: { params: Params }) {
   const allCategories = getIndexableCategories();
   const liveCount = posts.filter(isPostIndexable).length || posts.length;
   const featuredGuides = getFeaturedPosts(5);
+  const amazonContext = getContextualAmazonProducts(
+    category.slug,
+    category.slug,
+    category.name
+  );
 
   const breadcrumbItems = [
     { label: "Inicio", href: "/" },
@@ -150,11 +157,27 @@ export default async function CategoryPage({ params }: { params: Params }) {
                   </Link>
                 ))}
               </div>
+
+              {/* Contextual 3-Product Amazon Showcase for Category */}
+              <AmazonAffiliateBox
+                variant="showcase"
+                sectionTitle={amazonContext.sectionTitle}
+                sectionSubtitle={amazonContext.sectionSubtitle}
+                products={amazonContext.products}
+              />
             </div>
 
             {/* Sticky Right Sidebar — Dinamica.pe style */}
             <aside className="mt-12 lg:mt-0 lg:w-80 lg:flex-shrink-0">
               <div className="sticky top-28 space-y-8">
+                {/* Sticky Sidebar Amazon Affiliate Box */}
+                <AmazonAffiliateBox
+                  variant="sidebar"
+                  sectionTitle={amazonContext.sectionTitle}
+                  sectionSubtitle={amazonContext.sectionSubtitle}
+                  products={amazonContext.products}
+                />
+
                 {/* Featured Guides */}
                 <div className="rounded-2xl border border-gray-200 bg-gray-50/60 p-6">
                   <h3 className="mb-4 text-base font-bold text-gray-900">

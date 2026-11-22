@@ -38,6 +38,27 @@ export default function AvisoLegalPage() {
                 <p>Aviso Legal de {SITE_NAME}.</p>
               </div>
             )}
+
+            <section className="article-content max-w-none mt-10 pt-8 border-t border-gray-100">
+              <h2>Programa de Afiliados de Amazon</h2>
+              <p>
+                <strong>{SITE_NAME}</strong> (<code>equipajeordenado.com</code>)
+                participa en el Programa de Afiliados de Amazon EU y en el
+                Programa de Afiliados de Amazon.com (Amazon Services LLC
+                Associates Program), programas de publicidad para afiliados
+                diseñados para ofrecer a sitios web un modo de obtener
+                comisiones por publicidad, publicitando e incluyendo enlaces a{" "}
+                <code>Amazon.es</code> (ID de seguimiento:{" "}
+                <strong>equipajeordenado-21</strong>) y <code>Amazon.com</code>{" "}
+                (ID de seguimiento: <strong>equipajeordenado-20</strong>).
+              </p>
+              <p>
+                En calidad de Afiliado de Amazon, <strong>{SITE_NAME}</strong>{" "}
+                obtiene ingresos por las compras adscritas que cumplen los
+                requisitos aplicables, sin que ello suponga ningún sobrecoste ni
+                variación de precio para el usuario.
+              </p>
+            </section>
           </div>
         </div>
       </main>

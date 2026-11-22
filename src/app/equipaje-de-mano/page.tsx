@@ -4,6 +4,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import AdBanner from "@/components/AdBanner";
+import AmazonAffiliateBox from "@/components/AmazonAffiliateBox";
+import { getContextualAmazonProducts } from "@/lib/amazon";
 import {
   getIndexablePosts,
   getPostBySlug,
@@ -138,6 +140,11 @@ export default function EquipajeDeManoPillar() {
   ];
   const keyHrefs = new Set(SECTIONS.flatMap((s) => s.key.map((k) => k.href)));
   const updated = getPostBySlug("que-se-considera-como-equipaje-de-mano")?.modified?.slice(0, 10);
+  const amazonContext = getContextualAmazonProducts(
+    "equipaje-de-mano",
+    "guias",
+    "Equipaje de mano guía completa maleta cabina 55x40x20"
+  );
 
   const schema = {
     "@context": "https://schema.org",
@@ -180,6 +187,13 @@ export default function EquipajeDeManoPillar() {
               tarifas. Esta página reúne todas nuestras guías por tema.
             </p>
           </div>
+
+          <AmazonAffiliateBox
+            variant="inline"
+            sectionTitle={amazonContext.sectionTitle}
+            sectionSubtitle={amazonContext.sectionSubtitle}
+            products={amazonContext.products}
+          />
 
           <nav aria-label="Índice" className="my-8 rounded-2xl border border-gray-200 bg-gray-50 p-6">
             <p className="mb-3 text-sm font-extrabold uppercase tracking-wider text-primary-dark">
@@ -237,6 +251,13 @@ export default function EquipajeDeManoPillar() {
               </section>
             );
           })}
+
+          <AmazonAffiliateBox
+            variant="showcase"
+            sectionTitle={amazonContext.sectionTitle}
+            sectionSubtitle={amazonContext.sectionSubtitle}
+            products={amazonContext.products}
+          />
         </div>
       </main>
       <Footer />

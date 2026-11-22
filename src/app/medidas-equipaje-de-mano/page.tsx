@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import AirlineChecker from "@/components/AirlineChecker";
 import AdBanner from "@/components/AdBanner";
+import AmazonAffiliateBox from "@/components/AmazonAffiliateBox";
+import { getContextualAmazonProducts } from "@/lib/amazon";
 import {
   getIndexablePosts,
   getPostUrl,
@@ -93,6 +95,11 @@ export default function MedidasEquipajePage() {
   ];
 
   const rows = AIRLINE_RULES.map((a) => ({ ...a, guide: findAirlineGuide(a.id) }));
+  const amazonContext = getContextualAmazonProducts(
+    "medidas-equipaje-de-mano",
+    "reglas-de-equipaje",
+    "Medidas del equipaje de mano por aerolínea peso maleta cabina"
+  );
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -198,6 +205,13 @@ export default function MedidasEquipajePage() {
             aerolíneas cambian sus políticas con frecuencia: confirma siempre en
             tu reserva antes de volar.
           </p>
+
+          <AmazonAffiliateBox
+            variant="inline"
+            sectionTitle={amazonContext.sectionTitle}
+            sectionSubtitle={amazonContext.sectionSubtitle}
+            products={amazonContext.products}
+          />
         </div>
 
         <div className="mt-12">
@@ -274,6 +288,13 @@ export default function MedidasEquipajePage() {
               </div>
             ))}
           </section>
+
+          <AmazonAffiliateBox
+            variant="showcase"
+            sectionTitle={amazonContext.sectionTitle}
+            sectionSubtitle={amazonContext.sectionSubtitle}
+            products={amazonContext.products}
+          />
         </div>
       </main>
       <Footer />

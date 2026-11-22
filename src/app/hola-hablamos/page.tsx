@@ -3,6 +3,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Link from "next/link";
+import AmazonAffiliateBox from "@/components/AmazonAffiliateBox";
+import { getContextualAmazonProducts } from "@/lib/amazon";
 import {
   getPageBySlug,
   SITE_NAME,
@@ -40,6 +42,11 @@ export const metadata: Metadata = {
 
 export default function HolaHablamosPage() {
   const page = getPageBySlug("hola-hablamos");
+  const amazonContext = getContextualAmazonProducts(
+    "hola-hablamos",
+    "guias",
+    "Maletas de cabina recomendadas por Charlie Lingán"
+  );
   const cleanHtml = page
     ? page.content.replace(/<figure[^>]*>[\s\S]*?<\/figure>/gi, "")
     : "";
@@ -118,8 +125,11 @@ export default function HolaHablamosPage() {
                 </li>
                 <li>
                   <strong>Independencia:</strong> el sitio se financia con
-                  publicidad (Google AdSense). Ninguna marca paga por aparecer
-                  en nuestras recomendaciones.
+                  publicidad (Google AdSense) y enlaces de afiliado de Amazon
+                  Associates (<code>equipajeordenado-21</code> en Amazon.es y{" "}
+                  <code>equipajeordenado-20</code> en Amazon.com) sin coste
+                  adicional para el lector. Ninguna marca paga por alterar
+                  nuestras comparativas.
                 </li>
                 <li>
                   <strong>Correcciones:</strong> si detectas un dato
@@ -131,6 +141,13 @@ export default function HolaHablamosPage() {
                 </li>
               </ul>
             </section>
+
+            <AmazonAffiliateBox
+              variant="showcase"
+              sectionTitle={amazonContext.sectionTitle}
+              sectionSubtitle={amazonContext.sectionSubtitle}
+              products={amazonContext.products}
+            />
           </div>
         </div>
       </main>

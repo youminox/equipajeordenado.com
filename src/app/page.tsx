@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import AirlineChecker from "@/components/AirlineChecker";
 import BlogExplorerClient from "@/components/BlogExplorerClient";
 import AdBanner from "@/components/AdBanner";
+import AmazonAffiliateBox from "@/components/AmazonAffiliateBox";
+import { getContextualAmazonProducts } from "@/lib/amazon";
 import ReadingProgress from "@/components/ReadingProgress";
 import SplitHeading from "@/components/SplitHeading";
 import ClientEffects from "@/components/ClientEffects";
@@ -116,6 +118,11 @@ export default function HomePage() {
   const explorerPosts = getRecentPosts(48).map(toPostCard);
   const categories = getIndexableCategories().filter((c) => c.count > 0);
   const totalGuides = getIndexablePosts().length;
+  const homeAmazonContext = getContextualAmazonProducts(
+    "home",
+    "guias",
+    "Equipaje de mano maleta cabina 55x40x20 mochila bajo asiento"
+  );
 
   const orbitItems: OrbitItem[] = [
     {
@@ -908,6 +915,15 @@ export default function HomePage() {
 
           <div data-reveal>
             <LuggageCalculatorBlock options={calculatorOptions} />
+          </div>
+
+          <div data-reveal>
+            <AmazonAffiliateBox
+              variant="showcase"
+              sectionTitle={homeAmazonContext.sectionTitle}
+              sectionSubtitle={homeAmazonContext.sectionSubtitle}
+              products={homeAmazonContext.products}
+            />
           </div>
         </section>
 
