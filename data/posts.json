@@ -393,7 +393,8 @@
     "featuredImageId": 5975,
     "featuredImageUrl": "/images/Restaurantes-abiertos-las-24-horas-en-Asuncion.jpg",
     "type": "post",
-    "status": "publish"
+    "status": "publish",
+    "localImage": "/images/restaurantes-abiertos-las-24-horas-en-asuncion.webp"
   },
   {
     "id": 5972,
@@ -437,7 +438,8 @@
     "featuredImageId": 5971,
     "featuredImageUrl": "/images/Viajar-barato-a-Addis-Abeba.jpg",
     "type": "post",
-    "status": "publish"
+    "status": "publish",
+    "localImage": "/images/viajar-barato-a-addis-abeba.webp"
   },
   {
     "id": 5968,
@@ -547,7 +549,8 @@
     "featuredImageId": 5955,
     "featuredImageUrl": "/images/Consejos-para-viajar-a-Addis-Abeba.jpg",
     "type": "post",
-    "status": "publish"
+    "status": "publish",
+    "localImage": "/images/consejos-para-viajar-a-addis-abeba.webp"
   },
   {
     "id": 5952,
@@ -635,7 +638,8 @@
     "featuredImageId": 5943,
     "featuredImageUrl": "/images/Restaurantes-recomendados-por-locales-en-Asuncion.jpg",
     "type": "post",
-    "status": "publish"
+    "status": "publish",
+    "localImage": "/images/restaurantes-recomendados-por-locales-en-asuncion.webp"
   },
   {
     "id": 5940,
@@ -657,7 +661,8 @@
     "featuredImageId": 5941,
     "featuredImageUrl": "/images/Que-hotel-elegir-en-Chicago-para-disfrutar-tu-viaje.jpg",
     "type": "post",
-    "status": "publish"
+    "status": "publish",
+    "localImage": "/images/que-hotel-elegir-en-chicago-para-disfrutar-tu-viaje.webp"
   },
   {
     "id": 5936,
@@ -679,7 +684,8 @@
     "featuredImageId": 5937,
     "featuredImageUrl": "/images/Mejores-playas-en-Addis-Abeba.jpg",
     "type": "post",
-    "status": "publish"
+    "status": "publish",
+    "localImage": "/images/mejores-playas-en-addis-abeba.webp"
   },
   {
     "id": 5934,
@@ -789,7 +795,8 @@
     "featuredImageId": 5923,
     "featuredImageUrl": "/images/Zonas-seguras-para-hospedarse-en-Chicago.jpg",
     "type": "post",
-    "status": "publish"
+    "status": "publish",
+    "localImage": "/images/zonas-seguras-para-hospedarse-en-chicago.webp"
   },
   {
     "id": 5918,
@@ -811,7 +818,8 @@
     "featuredImageId": 5919,
     "featuredImageUrl": "/images/Cuando-viajar-a-Addis-Abeba.jpg",
     "type": "post",
-    "status": "publish"
+    "status": "publish",
+    "localImage": "/images/cuando-viajar-a-addis-abeba.webp"
   },
   {
     "id": 5916,
@@ -899,7 +907,8 @@
     "featuredImageId": 5907,
     "featuredImageUrl": "/images/Restaurantes-con-mejor-relacion-calidad-precio-en-Asuncion.jpg",
     "type": "post",
-    "status": "publish"
+    "status": "publish",
+    "localImage": "/images/restaurantes-con-mejor-relacion-calidad-precio-en-asuncion.webp"
   },
   {
     "id": 5904,
@@ -921,7 +930,8 @@
     "featuredImageId": 5905,
     "featuredImageUrl": "/images/Hoteles-con-desayuno-incluido-en-Chicago.jpg",
     "type": "post",
-    "status": "publish"
+    "status": "publish",
+    "localImage": "/images/hoteles-con-desayuno-incluido-en-chicago.webp"
   },
   {
     "id": 5900,
@@ -1075,7 +1085,8 @@
     "featuredImageId": 5883,
     "featuredImageUrl": "/images/Donde-hospedarse-en-Addis-Abeba.jpg",
     "type": "post",
-    "status": "publish"
+    "status": "publish",
+    "localImage": "/images/donde-hospedarse-en-addis-abeba.webp"
   },
   {
     "id": 5880,
@@ -1185,7 +1196,8 @@
     "featuredImageId": 5869,
     "featuredImageUrl": "/images/Alojamientos-centricos-en-Chicago-para-conocer-la-ciudad.jpg",
     "type": "post",
-    "status": "publish"
+    "status": "publish",
+    "localImage": "/images/alojamientos-centricos-en-chicago-para-conocer-la-ciudad.webp"
   },
   {
     "id": 5864,
@@ -6707,7 +6719,8 @@
     "featuredImageId": 5133,
     "featuredImageUrl": "/images/Hoteles-de-lujo-en-La-Habana-que-valen-la-pena.jpg",
     "type": "post",
-    "status": "publish"
+    "status": "publish",
+    "localImage": "/images/hoteles-de-lujo-en-la-habana-que-valen-la-pena.webp"
   },
   {
     "id": 5128,
@@ -7103,7 +7116,8 @@
     "featuredImageId": 5077,
     "featuredImageUrl": "/images/Los-mejores-hoteles-en-La-Habana-para-turistas.jpg",
     "type": "post",
-    "status": "publish"
+    "status": "publish",
+    "localImage": "/images/los-mejores-hoteles-en-la-habana-para-turistas.webp"
   },
   {
     "id": 5072,
@@ -31369,7 +31383,8 @@
     "featuredImageId": 1693,
     "featuredImageUrl": "/images/Que-hacer-en-las-playas-de-Cartagena-con-ninos.jpg",
     "type": "post",
-    "status": "publish"
+    "status": "publish",
+    "localImage": "/images/que-hacer-en-las-playas-de-cartagena-con-ninos.webp"
   },
   {
     "id": 1686,
@@ -32161,7 +32176,8 @@
     "featuredImageId": 1465,
     "featuredImageUrl": "/images/Alojamientos-en-Barcelona-cerca-de-la-Sagrada-Familia.jpg",
     "type": "post",
-    "status": "publish"
+    "status": "publish",
+    "localImage": "/images/alojamientos-en-barcelona-cerca-de-la-sagrada-familia.webp"
   },
   {
     "id": 1452,
@@ -41357,7 +41373,8 @@
     "featuredImageId": 156,
     "featuredImageUrl": "/images/Equipaje-de-mano-con-cargador-integrado-Vale-la-pena.jpg",
     "type": "post",
-    "status": "publish"
+    "status": "publish",
+    "localImage": "/images/equipaje-de-mano-con-cargador-integrado-vale-la-pena.webp"
   },
   {
     "id": 153,
